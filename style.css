@@ -1,0 +1,72 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #2c3e50;
+}
+.candle{
+    position: absolute;
+    width: 46px;
+    height: 220px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    border-radius: 3px 3px 0 0;
+    box-shadow: inset -10px 0 0 0 #e0e5ff;
+}
+.candle .shadow{
+    position: absolute;
+    width: 120px;
+    height: 8px;
+    background: #1b233e;
+    bottom: -8px;
+    left: -37px;
+    border-radius: 3px 3px 0 0;
+}
+.candle .wick{
+    position: absolute;
+    width: 4px;
+    height: 15px;
+    top: -15px;
+    left: 21px;
+    background: #ad88a9;
+    border-radius: 2px 2px 0 0;
+}
+.candle .flame{
+    position: absolute;
+    width: 15px;
+    height: 40px;
+    top: -48px;
+    left: 16px;
+    background: #ffad00;
+    border-radius: 10px 10px 8px / 30px 30px 12px 12px;
+    animation: animate 10s ease-in-out infinite, size 20s ease-in-out infinite, flicker 10s ease-in-out infinite;
+    transform-origin: 50% 100%;
+}
+
+@keyframes animate{
+    0%, 22%, 49%, 62%, 81%, 100%{
+        border-radius: 2px 14px 8px 8px / 20px 20px;
+    }
+    14%, 32%, 56%, 70%, 89%{
+        border-radius: 14px 2px 8px 8px / 20px 20px;
+    }
+}
+
+@keyframes size{
+    0%, 22%, 49%, 62%, 81%, 100%{
+        transform: scale(1, 0.9);
+    }
+    14%, 32%, 56%, 70%, 89%{
+        transform: scale(0.9, 0.9);
+    }
+}
+
+@keyframes flicker{
+    0%, 22%, 49%, 62%, 81%, 100%{
+        box-shadow: 0 0 20px 0 rgba(255, 202, 0, 0.7);
+    }
+    14%, 32%, 56%, 70%, 89%{
+        box-shadow: 0 0 30px 0 rgba(255,202,0,0.8);
+    }
+}
